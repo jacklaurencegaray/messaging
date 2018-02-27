@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,700|Varela+Round');
+
+#style-6::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar
+{
+  border-radius: 99px;
+	width: 5px;
+	background-color: rgba(255, 255, 255, .3);
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+  border-radius: 99px;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+
+html, body {
+  padding: 0;
+  background-color: #292c35;
+  font-family: 'Varela Round';
+  color: #ffffff;
+  font-size: 17px;
+  overflow: hidden;
+}
+
+*:focus {
+  outline: none;
+}
+
+.altcolor {
+  color: #78778c;
+}
+
+.altfont {
+  font-family: 'Poppins';
+}
+
+.bold {
+  font-family: 700;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+

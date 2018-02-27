@@ -1,0 +1,9 @@
+.chatComponent {
+    margin: 10px;
+}
+
+.upperChatComponent {
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

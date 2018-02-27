@@ -1,0 +1,37 @@
+html, body {
+    overflow: hidden;
+}
+
+.errorpage .centerVertically {
+    position: relative;
+    height: 100vh;
+    width: 95vw;
+    display: table;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.errorpage .centerVertically .content {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.errorpage .smiley {
+    font-size: 100px;
+    font-family: monospace;
+    color: rgba(255, 255, 255, .7);
+}
+
+.errorpage .message {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .errorpage .message {
+        font-size: 20px;
+    }
+    .errorpage .smiley {
+        font-size: 50px;
+    }
+}

@@ -1,0 +1,38 @@
+
+.messageComponent .message {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, .1);
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 6px 0 15px 0;
+    display: inline-block;
+    word-break: break-all;
+    max-width: 90vw;
+    position: relative;
+}
+
+.messageComponent .message .timeslot {
+    position: absolute;
+    right: 5px;
+    bottom: -15px;
+    padding: 2px;
+    border-radius: 99px;
+    font-size: 9px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.blue {
+    background-color: #0eb6b9 !important;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.alignLeft {
+    text-align: left;
+}

@@ -1,0 +1,9 @@
+.chathistory {
+    padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .chathistory {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700|Varela+Round');
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #0eb6b9;
+    transition: 1s all;
+}
+
+a:hover {
+    color: #fff;
+    transition: 1s all;
+}
+
+.container-fluid {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.navigation {
+    padding: 20px 20px;
+    margin: 0;
+    color: rgba(255, 255, 255, .3);
+    height: 10vh;
+}
+
+.mobBars {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.conversationName {
+    font-family: 'Varela Round';
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: lowercase;
+    color: #fff;
+    background-color: #0eb6b9;
+    padding: 10px;
+    border-radius: 9999px;
+}
+
+.textCenter, .textCenter * {
+    text-align: center;
+}
+
+.textRight, .textRight * {
+    text-align: right;
+}
+
+.moreOptions {
+    font-size: 25px;
+}
+
+.fullWidth {
+    width: 100%;
+}
