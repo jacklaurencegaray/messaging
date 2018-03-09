@@ -30,16 +30,17 @@ class SendMessage extends React.Component {
                 
                 messages.set({
                     messages: [
+                        ...prev_messages,                      
                         {
                             user_id: user_id, 
                             content: messageContent,
                             sent_on: new Date()
                         },
-                        ...prev_messages                        
                     ]
-                });
+                }, {merge: true});
+
+                this.messageInput.value = "";
             });
-            messageInput.value = '';
         }
     }
 
@@ -54,7 +55,7 @@ class SendMessage extends React.Component {
                 <Grid fluid className='fullHeight'>
                     <Row>
                         <Col xs={9} md={10}>
-                            <input type='text' name='message' id='message' onKeyPress={this.submitHandler}/>
+                            <input type='text' ref={messageInput => this.messageInput = messageInput} name='message' id='message' onKeyPress={this.submitHandler}/>
                         </Col>
                         <Col xs={3} md={2}>
                             <button ref={(e) => this.submitButton = e} onClick={this.onSendMessage}>Send</button>

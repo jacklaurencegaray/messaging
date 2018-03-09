@@ -8,10 +8,6 @@ class ChatHistory extends React.Component {
         super();
     }
 
-    componentDidMount() {
-        this.props.pushToProcessed(this.props.user_id);                        
-    }
-
     render() {
         var messages;
         if(this.props.loaded) {
@@ -21,17 +17,26 @@ class ChatHistory extends React.Component {
                     if(element.user_id != this.props.user_id) 
                         decoratorClass = 'alignLeft';
 
-                    return <Message pushToProcessed={this.props.pushToProcessed} processedIds={this.props.processedIds} sentOn={element.sent_on} setChatHistoryState={this.props.setChatHistoryState} userToName={this.props.userToName} decoratorClass={decoratorClass} key={index} current_user_id={this.props.user_id} user_id={element.user_id} message={element.content} />
+                    return <Message users={this.props.users} 
+                                    sentOn={element.sent_on} 
+                                    decoratorClass={decoratorClass} 
+                                    key={index} 
+                                    current_user_id={this.props.user_id} 
+                                    user_id={element.user_id} 
+                                    message={element.content} />
                 });
             } else {
-                messages = <Message pushToProcessed={this.props.pushToProcessed} setUserToName={this.props.setUserToName} userToName={this.props.userToName} user_id='system' message='Start the chat!' />;
+                messages = <Message users={this.props.users} 
+                                    user_id='system' 
+                                    message='Start the chat!' />;
             }
         } else {
-            messages = <Message pushToProcessed={this.props.pushToProcessed} user_id='system' message='Loading...' userToName={this.props.userToName} />;
+            messages = <Message user_id='system' 
+                                message='Loading...' />;
         }
 
         return (
-            <div className='chathistory'>
+            <div className='chathistory' id='chatPane'>
                 {messages}    
             </div>
         );

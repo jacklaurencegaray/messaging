@@ -12,6 +12,10 @@
     position: relative;
 }
 
+.messageComponent .blueText {
+    color: #0eb6b9 !important;
+}
+
 .messageComponent .message .timeslot {
     position: absolute;
     right: 5px;
