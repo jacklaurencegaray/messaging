@@ -26,22 +26,21 @@ class App extends Component {
   componentWillMount() {
     db.collection('messages').doc(this.props.route_id).get().then(doc => {
       if(doc.exists) {
-        console.log(doc.data.messages);
-        if(typeof doc.data.messages !== 'undefined') {
+        if(typeof doc.data().messages !== undefined) {
           db.collection('messages').doc(this.props.route_id).set({
             messages: []
           }, {merge: true});
         }
-        console.log('it exists btw');
       }
     });
     
     base.bindDoc(`messages/${this.props.route_id}`, {
       context: this,
       then: () => {
-        console.log(this.state.messages);
-        this.state.messages.sort((a, b) => 
-          a.sent_on > b.sent_on? 1: (b.sent_on > a.sent_on)? -1: -1); 
+        if(typeof this.state.messages !== 'undefined') {
+          this.state.messages.sort((a, b) => 
+          a.sent_on > b.sent_on? 1: (b.sent_on > a.sent_on)? -1: -1);
+        }
 
         this.setState({messagesLoaded: true});
       }
