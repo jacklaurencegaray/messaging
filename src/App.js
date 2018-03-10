@@ -39,6 +39,7 @@ class App extends Component {
     base.bindDoc(`messages/${this.props.route_id}`, {
       context: this,
       then: () => {
+        console.log(this.state.messages);
         this.state.messages.sort((a, b) => 
           a.sent_on > b.sent_on? 1: (b.sent_on > a.sent_on)? -1: -1); 
 
