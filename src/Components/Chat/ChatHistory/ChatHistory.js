@@ -4,17 +4,13 @@ import Message from './Messages/Message';
 
 class ChatHistory extends React.Component {
 
-    constructor(props) {
-        super();
-    }
-
     render() {
         var messages;
         if(this.props.loaded) {
             if(this.props.messages.length > 0) {
                 messages = this.props.messages.map((element, index) => {
                     let decoratorClass = 'alignRight blue';
-                    if(element.user_id != this.props.user_id) 
+                    if(element.user_id !== this.props.user_id) 
                         decoratorClass = 'alignLeft';
 
                     return <Message users={this.props.users} 

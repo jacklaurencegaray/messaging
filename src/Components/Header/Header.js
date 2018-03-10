@@ -2,7 +2,7 @@ import './Header.css';
 import { Grid, Col, Row } from 'react-flexbox-grid';
 import React from 'react';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faCircleNotch } from '@fortawesome/fontawesome-free-solid';
+import { faChevronLeft } from '@fortawesome/fontawesome-free-solid';
 
 class Header extends React.Component {
     render() {
