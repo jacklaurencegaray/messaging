@@ -12,6 +12,11 @@
     position: relative;
 }
 
+.messageComponent .containMessage {
+    width: 100%;
+    background-color: transparent !important;
+}
+
 .messageComponent .blueText {
     color: #0eb6b9 !important;
 }
@@ -29,7 +34,7 @@
     visibility: hidden;
 }
 
-.blue {
+.messageComponent .blue * {
     background-color: #0eb6b9 !important;
 }
 

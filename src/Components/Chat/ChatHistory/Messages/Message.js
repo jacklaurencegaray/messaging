@@ -33,9 +33,11 @@ class Message extends React.Component {
 
         return (
             <div className='messageComponent' onClick={this.showTime} onTouchStart={this.showTime}>
-                <div className={`message ${this.props.decoratorClass}`}>
-                <span className={`${this.color}`}> { this.user_id }</span>: {this.props.message }
-                    <span className='timeslot hide'>{`${sentOn}`}</span>
+                <div className={`containMessage ${this.props.decoratorClass}`}>
+                    <div className={`message`}>
+                        <span className={`${this.color}`}> { this.user_id }</span>: {this.props.message }
+                        <span className='timeslot hide'>{`${sentOn}`}</span>
+                    </div>
                 </div>
             </div>
         );

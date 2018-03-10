@@ -9,9 +9,9 @@ class ChatHistory extends React.Component {
         if(this.props.loaded) {
             if(this.props.messages.length > 0) {
                 messages = this.props.messages.map((element, index) => {
-                    let decoratorClass = 'alignRight blue';
+                    let decoratorClass = 'blue';
                     if(element.user_id !== this.props.user_id) 
-                        decoratorClass = 'alignLeft';
+                        decoratorClass = 'alignRight';
 
                     return <Message users={this.props.users} 
                                     sentOn={element.sent_on} 
