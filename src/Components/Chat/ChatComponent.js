@@ -26,7 +26,7 @@ class ChatComponent extends React.Component {
                     <ChatHistory loaded={this.props.loaded} user_id={this.props.user_id} messages={this.props.messages} users={this.props.users} />
                 </div>
                 <div className='lowerChatComponent'>
-                    <SendMessage user_id={this.props.user_id} pool_id={this.props.pool_id} />
+                    <SendMessage user_id={this.props.user_id} route_id={this.props.route_id} />
                 </div>
             </div>
         );

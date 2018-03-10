@@ -20,15 +20,18 @@ class SendMessage extends React.Component {
         var messageContent = messageInput.value;
         var user_id = this.props.user_id;
         if(messageInput.value.trim() !== '') {
-            let messages = db.collection('messages').doc(this.props.pool_id);
-            messages.get().then((doc) => {
+            let message = db.collection('messages').doc(this.props.route_id);
+
+            message.get().then(doc => {
                 let prev_messages;
-                if(doc.exists)
-                    prev_messages = doc.data().messages;
-                else 
-                    prev_messages = [];
                 
-                messages.set({
+                if(doc.exists) {
+                    prev_messages = doc.data().messages;
+                } else {
+                    prev_messages = [];
+                }
+
+                message.set({
                     messages: [
                         ...prev_messages,                      
                         {
