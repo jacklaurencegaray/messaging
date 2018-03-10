@@ -26,7 +26,8 @@ class App extends Component {
   componentWillMount() {
     db.collection('messages').doc(this.props.route_id).get().then(doc => {
       if(doc.exists) {
-        if(!doc.data.messages) {
+        console.log(doc.data.messages);
+        if(typeof doc.data.messages !== 'undefined') {
           db.collection('messages').doc(this.props.route_id).set({
             messages: []
           }, {merge: true});
