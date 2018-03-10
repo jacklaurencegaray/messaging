@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './Components/Header/Header';
 import ChatComponent from './Components/Chat/ChatComponent';
+import { db } from './Database/Rebase';
 import base from './Database/Rebase';
 
 class App extends Component {
@@ -23,7 +24,18 @@ class App extends Component {
   }
   
   componentWillMount() {
-    base.bindDoc(`messages/${this.props.pool_id}`, {
+    db.collection('messages').doc(this.props.route_id).get().then(doc => {
+      if(doc.exists) {
+        if(!doc.data.messages) {
+          db.collection('messages').doc(this.props.route_id).set({
+            messages: []
+          }, {merge: true});
+        }
+        console.log('it exists btw');
+      }
+    });
+    
+    base.bindDoc(`messages/${this.props.route_id}`, {
       context: this,
       then: () => {
         this.state.messages.sort((a, b) => 
@@ -32,17 +44,18 @@ class App extends Component {
         this.setState({messagesLoaded: true});
       }
     });
+
   }
 
   render() {
     return (
       <React.Fragment>
-        <Header conversationName={`pool#${this.props.pool_id}`} />
+        <Header conversationName={`pool#${this.props.route_id}`} />
         <ChatComponent 
           setLoaded={this.setLoaded}
           loaded={this.state.messagesLoaded}
           user_id={this.props.user_id} 
-          pool_id={this.props.pool_id} 
+          route_id={this.props.route_id} 
           messages={this.state.messages}
           users={this.state.users} 
         />     

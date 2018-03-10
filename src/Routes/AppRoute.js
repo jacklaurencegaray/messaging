@@ -9,7 +9,7 @@ const AppRoutes = () => (
     <BrowserRouter>
         <div>
             <Route 
-                path={`${process.env.PUBLIC_URL}/:user_id/:pool_id`}
+                path={`${process.env.PUBLIC_URL}/:user_id/:route_id`}
                 render={props => 
                     <App user_id={props.match.params.user_id} 
                     route_id={props.match.params.route_id} /> 
