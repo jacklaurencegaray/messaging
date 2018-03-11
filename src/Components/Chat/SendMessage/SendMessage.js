@@ -20,8 +20,6 @@ class SendMessage extends React.Component {
         var messageContent = messageInput.value;
         var user_id = this.props.user_id;
         if(messageInput.value.trim() !== '') {
-            var messages;
-            
             db.collection('messages').doc(this.props.route_id).get().then((doc) => {
                 let prev_messages;
                 if(doc.exists)
